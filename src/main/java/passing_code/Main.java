@@ -11,3 +11,8 @@ public class Main {
         System.out.println(result);
     }
 }
+
+/* Tại sao có thể truyền các method reference và lambda expression vào các phương thức mà chấp nhận functional interface như là tham số.
+    - Khi ta truyền một method reference hoặc một lambda expression, Java sẽ tự động chuyển đổi nó thành một instance của một functional interface tương ứng.
+
+ */
