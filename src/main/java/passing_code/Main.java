@@ -7,7 +7,7 @@ public class Main {
         Inventory inventory = new Inventory();
 
         // Có thể tryền một phương thức vào làm tham số (parameter).
-        List<Apple> result = FilterApple.filterApples(inventory.getListApples(), FilterApple::isGreenApple);
+        List<Apple> result = FilterApple.filterApples(inventory.getListApples(), (Apple a) -> AppleColor.RED.name().equals(a.getColor()));
         System.out.println(result);
     }
 }
