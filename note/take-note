@@ -1,0 +1,9 @@
+- 1 -
+ // // Using Stream API
+    List<Apple> listGreenApples = inventory.getListApples().stream().filter((Apple a) -> a.getColor().equals(AppleColor.GREEN.name())).collect(toList());
+
+
++) Phương thức filter của stream() lấy một instance của Predecate interface, tức nghĩa là lambda expression ở trên tạo một instance predecate.
++) Phương thức: collect(Collections.toList()) khác gì với toList().
+            + Collections.toList() xuất hiện từ java 8 và nó trả về một List có thể thay đổi (mutable list).
+            + toList() xuất hiện từ java 16 và nó trả về một list không thể thay đổi, nếu cố thay đổi thì thông báo lỗi sẽ xuất hiện.
