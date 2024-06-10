@@ -7,3 +7,11 @@
 +) Phương thức: collect(Collections.toList()) khác gì với toList().
             + Collections.toList() xuất hiện từ java 8 và nó trả về một List có thể thay đổi (mutable list).
             + toList() xuất hiện từ java 16 và nó trả về một list không thể thay đổi, nếu cố thay đổi thì thông báo lỗi sẽ xuất hiện.
+
+
+
+- 2 -
+    List<Apple> listRedApples = inventory.getListApples().parallelStream().filter((Apple a) -> a.getColor().equals(AppleColor.RED.name())).collect(Collectors.toList());
+
++) Parallelism in java and no shared mutable state
+    : work only if the methods passed to library methods like filter don't interact.

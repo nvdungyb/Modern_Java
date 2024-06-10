@@ -1,6 +1,7 @@
 package passing_code;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -15,6 +16,10 @@ public class Main {
         // Using Stream API
         List<Apple> listGreenApples = inventory.getListApples().stream().filter((Apple a) -> a.getColor().equals(AppleColor.GREEN.name())).collect(toList());
         System.out.println(listGreenApples);
+
+        // Using Parallel Stream
+        List<Apple> listRedApples = inventory.getListApples().parallelStream().filter((Apple a) -> a.getColor().equals(AppleColor.RED.name())).collect(Collectors.toList());
+        System.out.println(listRedApples);
     }
 }
 
