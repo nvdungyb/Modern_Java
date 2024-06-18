@@ -14,7 +14,7 @@ public class FilterApple {
     }
 
     // Một phương thức được truyền vào dưới dạng tham số Predicate.
-    public static List<Apple> filterApples(List<Apple> listApples, Predecate<Apple> p) {
+    public static List<Apple> filterApples(List<Apple> listApples, Predicate<Apple> p) {
         List<Apple> filterdApples = new ArrayList<>();
 
         for (Apple apple : listApples) {

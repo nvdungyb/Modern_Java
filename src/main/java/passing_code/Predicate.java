@@ -1,6 +1,6 @@
 package passing_code;
 
-public interface Predecate<T> {
+public interface Predicate<T> {
     boolean test(T t);
 }
 
