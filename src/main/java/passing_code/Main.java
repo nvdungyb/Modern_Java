@@ -14,8 +14,17 @@ public class Main {
 //        List<Apple> result = FilterApple.filterApples(inventory.getListApples(), (Apple a) -> AppleColor.RED.name().equals(a.getColor()));
 //        System.out.println(result);
 
-        List<Apple> listRedAndHeavyApples = FilterApple.filterApples(inventory.getListApples(), new AppleRedAndHeavy());
-        System.out.println(listRedAndHeavyApples);
+        // Using anonymous class
+        List<Apple> result = FilterApple.filterApples(inventory.getListApples(), new Predicate<Apple>() {
+            public boolean test(Apple apple) {
+                if (apple.getColor().equals(AppleColor.RED.name()) && apple.getWeight() > 200)
+                    return true;
+                return false;
+            }
+        });
+
+        System.out.println(result);
+
     }
 }
 

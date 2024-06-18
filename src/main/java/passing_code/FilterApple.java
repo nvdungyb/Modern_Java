@@ -13,7 +13,7 @@ public class FilterApple {
         return apple.getColor().equals(AppleColor.RED.name());
     }
 
-    // Một phương thức được truyền vào dưới dạng tham số Predicate.
+    // Phương thức được truyền vào đối tượng dạng Predicate.
     public static List<Apple> filterApples(List<Apple> listApples, Predicate<Apple> p) {
         List<Apple> filterdApples = new ArrayList<>();
 
