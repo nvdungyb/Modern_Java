@@ -10,12 +10,12 @@ public class Inventory {
         listApples = new ArrayList<>();
 
         Apple apple1 = new Apple(100, AppleColor.GREEN);
-        Apple apple2 = new Apple(200, AppleColor.RED);
         Apple apple3 = new Apple(300, AppleColor.GREEN);
-        Apple apple4 = new Apple(400, AppleColor.RED);
         Apple apple5 = new Apple(500, AppleColor.GREEN);
-        Apple apple6 = new Apple(600, AppleColor.RED);
         Apple apple7 = new Apple(700, AppleColor.GREEN);
+        Apple apple2 = new Apple(200, AppleColor.RED);
+        Apple apple4 = new Apple(400, AppleColor.RED);
+        Apple apple6 = new Apple(600, AppleColor.RED);
 
         listApples.addAll(List.of(apple1, apple2, apple3, apple4, apple5, apple6, apple7));
     }

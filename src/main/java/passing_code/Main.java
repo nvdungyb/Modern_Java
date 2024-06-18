@@ -1,6 +1,7 @@
 package passing_code;
 
 import java.util.List;
+import java.util.logging.Filter;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
@@ -9,17 +10,12 @@ public class Main {
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
 
-        // Có thể tryền một phương thức vào làm tham số (parameter).
-        List<Apple> result = FilterApple.filterApples(inventory.getListApples(), (Apple a) -> AppleColor.RED.name().equals(a.getColor()));
-        System.out.println(result);
+//        // Có thể tryền một phương thức vào làm tham số (parameter).
+//        List<Apple> result = FilterApple.filterApples(inventory.getListApples(), (Apple a) -> AppleColor.RED.name().equals(a.getColor()));
+//        System.out.println(result);
 
-        // Using Stream API
-        List<Apple> listGreenApples = inventory.getListApples().stream().filter((Apple a) -> a.getColor().equals(AppleColor.GREEN.name())).collect(toList());
-        System.out.println(listGreenApples);
-
-        // Using Parallel Stream
-        List<Apple> listRedApples = inventory.getListApples().parallelStream().filter((Apple a) -> a.getColor().equals(AppleColor.RED.name())).collect(Collectors.toList());
-        System.out.println(listRedApples);
+        List<Apple> listRedAndHeavyApples = FilterApple.filterApples(inventory.getListApples(), new AppleRedAndHeavy());
+        System.out.println(listRedAndHeavyApples);
     }
 }
 
