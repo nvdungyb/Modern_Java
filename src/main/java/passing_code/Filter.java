@@ -14,12 +14,12 @@ public class Filter {
     }
 
     // Phương thức được truyền vào đối tượng dạng Predicate.
-    public static List<Apple> filterApples(List<Apple> listApples, Predicate<Apple> p) {
-        List<Apple> filterdApples = new ArrayList<>();
+    public static <T> List<T> filterProduct(List<T> listApples, Predicate<T> p) {
+        List<T> filterdApples = new ArrayList<>();
 
-        for (Apple apple : listApples) {
-            if (p.test(apple)) {                // kiểm tra xem có thỏa điều kiện?
-                filterdApples.add(apple);
+        for (T t : listApples) {
+            if (p.test(t)) {                // kiểm tra xem có thỏa điều kiện?
+                filterdApples.add(t);
             }
         }
 

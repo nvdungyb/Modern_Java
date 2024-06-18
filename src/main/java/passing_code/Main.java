@@ -1,10 +1,6 @@
 package passing_code;
 
 import java.util.List;
-import java.util.logging.Filter;
-import java.util.stream.Collectors;
-
-import static java.util.stream.Collectors.toList;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +11,7 @@ public class Main {
 //        System.out.println(result);
 
         // Using anonymous class
-        List<Apple> result = FilterApple.filterApples(inventory.getListApples(), new Predicate<Apple>() {
+        List<Apple> result = Filter.filterProduct(inventory.getListApples(), new Predicate<Apple>() {
             public boolean test(Apple apple) {
                 if (apple.getColor().equals(AppleColor.RED.name()) && apple.getWeight() > 200)
                     return true;

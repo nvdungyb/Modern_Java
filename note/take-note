@@ -44,4 +44,6 @@
     It doesn't have a name. They allow you to declare and instantiatea class at the same time.
 
     => Để không phải tạo lớp và khởi tạo để dùng 1 lần thì thay vào đó ta dùng anonymous class cho tiện.
-    Nhưng cách này vẫn không gọn bằng việc sử dụng lambda expression.
+    Nhưng cách này khiến code khó hiểu, khó đọc và khó bảo trì đối với trường hợp phức tạp.
+    không gọn bằng việc sử dụng lambda expression.
+
