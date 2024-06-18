@@ -3,7 +3,7 @@ package passing_code;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilterApple {
+public class Filter {
 
     public static boolean isGreenApple(Apple apple) {
         return apple.getColor().equals(AppleColor.GREEN.name());
