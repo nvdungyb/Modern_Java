@@ -60,6 +60,5 @@
     is an interface that specific exactly one abstract method.
     It also can has many default method (method with a body that provide some default implementation for a method in case it isn't implements by a class).
 
-
 => Lambda expression let you provide the implementation of the abstract method of a functional interface directly inline
 and treat the whole expression as an instance of a functional interface (an instance of a concrete implementation of the functional interface).
