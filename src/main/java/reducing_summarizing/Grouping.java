@@ -14,5 +14,18 @@ public class Grouping {
                 .collect(Collectors.groupingBy(Dish::getType));
 
         dishByType.keySet().stream().forEach(val -> System.out.println(val + " : " + dishByType.get(val)));
+
+        // We can classify more complex than a simple property accessor.
+        Map<CaloricLevel, List<Dish>> dishByCaloricLevel = menu.stream()
+                .collect(Collectors.groupingBy(dish -> {
+                    if (dish.getCalories() < 400)
+                        return CaloricLevel.DIET;
+                    else if (dish.getCalories() <= 700)
+                        return CaloricLevel.NORMAL;
+                    else
+                        return CaloricLevel.FAT;
+                }));
+
+        dishByCaloricLevel.keySet().forEach(val -> System.out.println(val + " : " + dishByCaloricLevel.get(val)));
     }
 }
