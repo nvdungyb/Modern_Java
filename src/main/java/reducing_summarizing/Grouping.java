@@ -27,5 +27,17 @@ public class Grouping {
                 }));
 
         dishByCaloricLevel.keySet().forEach(val -> System.out.println(val + " : " + dishByCaloricLevel.get(val)));
+
+        // We can manipulate grouped elements.
+        Map<Dish.Type, List<Dish>> caloricByType = menu.stream()
+                .collect(Collectors.groupingBy(Dish::getType, Collectors.filtering(val -> val.getCalories() > 500, Collectors.toList())));
+
+        caloricByType.keySet().forEach(val -> System.out.println(val + " : " + caloricByType.get(val)));
+
+        // We can use mapping to extract the name of dishes by type.
+        Map<Dish.Type, List<String>> disNamesByType = menu.stream()
+                .collect(Collectors.groupingBy(Dish::getType, Collectors.mapping(Dish::getName, Collectors.toList())));
+
+        disNamesByType.keySet().forEach(val -> System.out.println(val + " : " + disNamesByType.get(val)));
     }
 }
