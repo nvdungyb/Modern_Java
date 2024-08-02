@@ -19,5 +19,10 @@ public class CollectingAndThen {
                 ));
 
         System.out.println(mostCaloricDishByType);
+
+        // PartitionedByVegetarian
+        Map<Boolean, Dish> mostCaloricPartitionedByVegetarian = menu.stream()
+                .collect(partitioningBy(Dish::isVegetarian, collectingAndThen(maxBy(Comparator.comparingInt(Dish::getCalories)), Optional::get)));
+        System.out.println(mostCaloricPartitionedByVegetarian);
     }
 }
